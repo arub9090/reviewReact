@@ -9,7 +9,6 @@ function App() {
       <main>
         <h1 className='text-xl'>Hello World 2 New</h1>
       </main>
-
       <Footer />
       </div>
     </Router>
