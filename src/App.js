@@ -7,7 +7,7 @@ function App() {
       <div className='flex flex-col justify-between h-screen'>
       <Navbar />
       <main>
-        <h1 className='text-xl'>Hello World 2</h1>
+        <h1 className='text-xl'>Hello World 2 New</h1>
       </main>
 
       <Footer />
