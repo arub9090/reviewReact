@@ -6,19 +6,22 @@ function Navbar() {
   return (
     <nav className="navbar mb-12 shadow-md shadow-secondary-focus bg-info-content text-white">
       <div className="container mx-auto">
-          <div className="flex-none px-2 mx-2">
-          <FaGithub className="inline pr-2 text-3xl"/>
-          <Link to='/' className="text-lg font-bold">
-          GitHubFinder
+        <div className="flex-none px-2 mx-2">
+          <FaGithub className="inline pr-2 text-3xl" />
+          <Link to="/" className="text-lg font-bold">
+            GitHubFinder
           </Link>
+        </div>
+        <div className="flex-1 px-2 mx-2">
+          <div className="flex justify-end">
+            <Link to="/" className="btn btn-ghost btn-sm rounded-btn">
+              Home
+            </Link>
+            <Link to="/about" className="btn btn-ghost btn-sm rounded-btn">
+              About
+            </Link>
           </div>
-
-          <div className="flex-1 px-2 mx-2">
-              <div className="flex justify-end">
-                <Link to='/' className="btn btn-ghost btn-sm rounded-btn">Home</Link>
-                <Link to='/about' className="btn btn-ghost btn-sm rounded-btn">About</Link>
-              </div>
-          </div>
+        </div>
       </div>
     </nav>
   );
