@@ -6,8 +6,8 @@ function App() {
     <Router>
       <div className='flex flex-col justify-between h-screen'>
       <Navbar />
-      <main>
-        <h1>Hello World</h1>
+      <main className='container mx-auto px-2 pb-12'>
+        Content Here You can see
       </main>
       <Footer />
       </div>
