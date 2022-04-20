@@ -9,7 +9,6 @@ function App() {
       <Navbar />
       <main>
         <h1 className='text-xl'>Hello World 2 New is greate thing to add</h1>
-        <h1>Okay done</h1>
       </main>
       <Footer />
       <NewFooter/>
