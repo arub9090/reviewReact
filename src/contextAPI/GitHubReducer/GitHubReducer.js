@@ -13,7 +13,13 @@ const gitHubReducer = (state, action) => {
         loading: true,
       };
 
-
+      case 'GET_USER_AND_REPOS':
+      return {
+        ...state,
+        singleUser: action.payload.singleUser,
+        userRepo: action.payload.userRepo,
+        loading: false,
+      }
       case "CLEAR_USER":
       return {
         ...state,

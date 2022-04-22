@@ -2,24 +2,28 @@ import React from 'react'
 import {useState, useContext} from 'react'
 import GithubContext from '../../contextAPI/gitHub/GithubContext'
 import AlertContext from '../../contextAPI/Alert/AlertContext'
+import {searchUsers} from '../../contextAPI/gitHub/gitHubActions'
 
 function UserSearch() {
 
-    const {user,searchUsers, clearUsers} = useContext(GithubContext)
+    const {user,dispatch, clearUsers} = useContext(GithubContext)
     const {createAlert} = useContext(AlertContext)
 
     const [text, setText] = useState('')
     const onChangeHandler=(e)=>{
         setText(e.target.value)
     }
-    const onSubmitHandler=(e)=>{
+    const onSubmitHandler=async (e)=>{
         e.preventDefault();
         if(text === ''){
           createAlert('PLease Write Something', 'error')
         }else{
-                searchUsers(text)
+          dispatch({type: 'SET_LOADING'})
+              const users= await searchUsers(text);
+              dispatch({type: 'GET_USER', payload: users});
+              setText('')
         }
-        setText('')
+        
     }
   return (
     <div className='grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 mb-8 gap-8'>
@@ -48,7 +52,7 @@ function UserSearch() {
         <div>
           <button
             className='btn btn-info btn-md rounded-md'
-            onClick={clearUsers}
+            onClick={()=> dispatch({type: 'CLEAR_USER'})}
           >
             Clear
           </button>

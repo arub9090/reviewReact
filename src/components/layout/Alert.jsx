@@ -4,7 +4,8 @@ import AlertContext from '../../contextAPI/Alert/AlertContext'
 function Alert() {
   const { alert } = useContext(AlertContext)
   return (
-    alert !== null && (
+    <>
+   { alert !== null && (
       <p className='flex items-start mb-4 space-x-2'>
         {alert.typemsg === 'error' && (
           <svg
@@ -24,7 +25,8 @@ function Alert() {
           <strong>{alert.msg}</strong>
         </p>
       </p>
-    )
+    )}
+    </>
   )
 }
 
